@@ -2,7 +2,7 @@
 using System.Text;
 using System.Windows.Forms;
 
-namespace ao_id_extractor.Helpers
+namespace empty_folder_deleter.Helpers
 {
     public class ControlWriter : TextWriter
     {

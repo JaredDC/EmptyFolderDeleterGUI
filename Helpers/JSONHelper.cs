@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web.Script.Serialization;
 
-namespace ao_id_extractor.Helpers
+namespace empty_folder_deleter.Helpers
 {
     public static class JSONHelper
     {

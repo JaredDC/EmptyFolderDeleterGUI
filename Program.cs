@@ -1,4 +1,4 @@
-﻿using ao_id_extractor.Helpers;
+﻿using empty_folder_deleter.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Linq;
 
-namespace ao_id_extractor
+namespace empty_folder_deleter
 {
     public static class ProcessExtensions
     {

@@ -1,4 +1,4 @@
-﻿namespace ao_id_extractor
+﻿namespace empty_folder_deleter
 {
     partial class MainWindow
     {

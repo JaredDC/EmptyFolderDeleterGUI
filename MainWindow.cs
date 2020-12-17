@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ao_id_extractor
+namespace empty_folder_deleter
 {
     public partial class MainWindow : Form
     {

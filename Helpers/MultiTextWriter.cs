@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace ao_id_extractor.Helpers
+namespace empty_folder_deleter.Helpers
 {
     public class MultiTextWriter : TextWriter
     {
