@@ -152,7 +152,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "AO Main Folder:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
-
             // 
             // groupBox3
             // 
@@ -207,7 +206,6 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-
             // 
             // btnStop
             // 

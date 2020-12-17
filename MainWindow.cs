@@ -88,5 +88,10 @@ namespace empty_folder_deleter
             //var newPath = "path change to:" + tbOutFolder.Text + "\r\n";
             //this.tbConsole.Text += newPath;
         }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }
