@@ -123,12 +123,6 @@ namespace empty_folder_deleter
                 Console.SetOut(new MultiTextWriter(new ControlWriter(_mainWindow.tbConsole), Console.Out));
                 Console.Out.WriteLine(helpString);
                 Application.Run(_mainWindow);
-                /*
-                Console.Out.WriteLine("Usage:1.Select a folder.\r\n" +
-                    "2.\"Print\":show all the empty folder, but no delete anything.\r\n" +
-                    "3. \"Clear\":clean the screen.\r\n" +
-                    "4.\"STOP\":Stop the searching process."
-                );*/
                 return;
             }
             else
