@@ -117,7 +117,19 @@ namespace empty_folder_deleter
                 _mainWindow = new MainWindow();
                 Application.EnableVisualStyles();
                 Console.SetOut(new MultiTextWriter(new ControlWriter(_mainWindow.tbConsole), Console.Out));
+                Console.Out.WriteLine("\r\n***** USAGE *****\r\n1.\"Select\": Select a folder, or just enter on the textbox.\r\n" +
+                    "2.\"Print\" : Show all the empty folders recursively, but no delete anything.\r\n" +
+                    "3.\"Clear\" : Clean the screen.\r\n" +
+                    "4.\"STOP\"  : Stop the search process.\r\n" +
+                    "5.\"Clean\" : Recursively delete empty subfolders under target folder.\r\n***** USAGE *****"
+                );
                 Application.Run(_mainWindow);
+                /*
+                Console.Out.WriteLine("Usage:1.Select a folder.\r\n" +
+                    "2.\"Print\":show all the empty folder, but no delete anything.\r\n" +
+                    "3. \"Clear\":clean the screen.\r\n" +
+                    "4.\"STOP\":Stop the searching process."
+                );*/
                 return;
             }
             else
