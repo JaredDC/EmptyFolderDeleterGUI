@@ -39,9 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbExportType = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbExtractionMode = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tbConsole = new System.Windows.Forms.TextBox();
             this.btnExtract = new System.Windows.Forms.Button();
@@ -164,9 +162,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.cbExportType);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.cbExtractionMode);
             this.groupBox2.Location = new System.Drawing.Point(9, 118);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
@@ -186,22 +182,7 @@
             this.label4.Size = new System.Drawing.Size(116, 18);
             this.label4.TabIndex = 5;
             this.label4.Text = "Export Type:";
-            // 
-            // cbExportType
-            // 
-            this.cbExportType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbExportType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbExportType.FormattingEnabled = true;
-            this.cbExportType.Items.AddRange(new object[] {
-            "Text List",
-            "JSON",
-            "Both"});
-            this.cbExportType.Location = new System.Drawing.Point(819, 26);
-            this.cbExportType.Margin = new System.Windows.Forms.Padding(4);
-            this.cbExportType.Name = "cbExportType";
-            this.cbExportType.Size = new System.Drawing.Size(180, 26);
-            this.cbExportType.TabIndex = 4;
-            this.cbExportType.SelectedIndexChanged += new System.EventHandler(this.cbExportType_SelectedIndexChanged);
+
             // 
             // label3
             // 
@@ -212,23 +193,7 @@
             this.label3.Size = new System.Drawing.Size(152, 18);
             this.label3.TabIndex = 3;
             this.label3.Text = "Extraction Mode:";
-            // 
-            // cbExtractionMode
-            // 
-            this.cbExtractionMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbExtractionMode.FormattingEnabled = true;
-            this.cbExtractionMode.Items.AddRange(new object[] {
-            "Item Extraction",
-            "Location Extraction",
-            "Resource Extraction",
-            "Dump All XML",
-            "Extract Items & Locations & Resource"});
-            this.cbExtractionMode.Location = new System.Drawing.Point(148, 26);
-            this.cbExtractionMode.Margin = new System.Windows.Forms.Padding(4);
-            this.cbExtractionMode.Name = "cbExtractionMode";
-            this.cbExtractionMode.Size = new System.Drawing.Size(180, 26);
-            this.cbExtractionMode.TabIndex = 0;
-            this.cbExtractionMode.SelectedIndexChanged += new System.EventHandler(this.cbExtractionMode_SelectedIndexChanged);
+
             // 
             // groupBox3
             // 
@@ -334,9 +299,7 @@
         private System.Windows.Forms.Button btnPrintOutFolder;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbExtractionMode;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbExportType;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnExtract;
         private System.Windows.Forms.Button btnClear;

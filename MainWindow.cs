@@ -1,5 +1,4 @@
-﻿using ao_id_extractor.Extractors;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -15,8 +14,6 @@ namespace ao_id_extractor
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            cbExtractionMode.SelectedIndex = 0;
-            cbExportType.SelectedIndex = 0;
         }
 
         private void btnSelectFromRegistry_Click(object sender, EventArgs e)
@@ -78,16 +75,6 @@ namespace ao_id_extractor
         {
 
             Invoke(new Action(Program.InvokeStop));
-        }
- 
-        private void cbExtractionMode_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Program.ExportMode = (ExportMode)((ComboBox)sender).SelectedIndex;
-        }
-
-        private void cbExportType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Program.ExportType = (ExportType)((ComboBox)sender).SelectedIndex;
         }
 
         private void label2_Click(object sender, EventArgs e)

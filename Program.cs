@@ -1,5 +1,4 @@
-﻿using ao_id_extractor.Extractors;
-using ao_id_extractor.Helpers;
+﻿using ao_id_extractor.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -50,8 +49,6 @@ namespace ao_id_extractor
         static extern bool AllocConsole();
 
         public static string OutputFolderPath { get; set; }
-        public static ExportType ExportType { get; set; }
-        public static ExportMode ExportMode { get; set; }
         public static string MainGameFolder { get; set; }
 
 
@@ -147,80 +144,12 @@ namespace ao_id_extractor
                     return;
                 }
 
-                var exportType = ExportType.Both;
-                switch (cmds[1])
-                {
-                    case "l":
-                        exportType = ExportType.TextList;
-                        break;
-                    case "j":
-                        exportType = ExportType.Json;
-                        break;
-                }
-
-                ExportType = exportType;
-
                 if (int.Parse(cmds[0]) > 4 || int.Parse(cmds[0]) < 0)
-                    return;
-
-                ExportMode = (ExportMode)int.Parse(cmds[0]);
-
-                RunExtractions();                
+                    return;                          
             }
 
             Console.Out.WriteLine("\nPress Any Key to Quit");
             Console.ReadKey();
-        }
-
-        public static void RunExtractions()
-        {
-            Console.Out.WriteLine("#---- Starting Extraction Operation ----#");
-
-            string exportTypeString = "";
-            if (ExportType == ExportType.TextList)
-                exportTypeString = "Text List";
-            else if (ExportType == ExportType.Json)
-                exportTypeString = "JSON";
-            else
-                exportTypeString = "Text List and JSON";
-
-            switch (ExportMode)
-            {
-                case ExportMode.Item_Extraction:
-                    Console.Out.WriteLine("--- Starting Extraction of Items as " + exportTypeString + " ---");
-                    new ItemExtractor().Extract();
-                    Console.Out.WriteLine("--- Extraction Complete! ---");
-                    break;
-                case ExportMode.Location_Extraction:
-                    Console.Out.WriteLine("--- Starting Extraction of Locations as " + exportTypeString + " ---");
-                    new LocationExtractor().Extract();
-                    Console.Out.WriteLine("--- Extraction Complete! ---");
-                    break;
-                case ExportMode.Resource_Extraction:
-                    Console.Out.WriteLine("--- Starting Extraction of Resources as " + exportTypeString + " ---");
-                    new ResourceExtractor().Extract();
-                    Console.Out.WriteLine("--- Extraction Complete! ---");
-                    break;
-                case ExportMode.Dump_All_XML:
-                    Console.Out.WriteLine("--- Starting Extraction of All Files as XML ---");
-                    new BinaryDumper().Extract();
-                    Console.Out.WriteLine("--- Extraction Complete! ---");
-                    break;
-                case ExportMode.Extract_Items_Locations_Resource:
-                    Console.Out.WriteLine("--- Starting Extraction of Items as " + exportTypeString + " ---");
-                    new ItemExtractor().Extract();
-                    Console.Out.WriteLine("--- Extraction Complete! ---");
-
-                    Console.Out.WriteLine("--- Starting Extraction of Locations as " + exportTypeString + " ---");
-                    new LocationExtractor().Extract();
-                    Console.Out.WriteLine("--- Extraction Complete! ---");
-
-                    Console.Out.WriteLine("--- Starting Extraction of Resources as " + exportTypeString + " ---");
-                    new ResourceExtractor().Extract();
-                    Console.Out.WriteLine("--- Extraction Complete! ---");
-                    break;
-            }
-            Console.Out.WriteLine("#---- Finished Extraction Operation ----#");
         }
 
         public static void RunClean()
