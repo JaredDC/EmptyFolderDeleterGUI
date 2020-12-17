@@ -1,17 +1,15 @@
-# REPO/PROJECT INFO
-I stopped working on this project, but broderickhyman continues active development on his fork: https://github.com/broderickhyman/ao-id-extractor
+# empty folder deleter
+Recursively delete empty subfolders under target folder
 
-# ao-id-extractor
-This tool allows you to extract the ID's and Names of Items and Locations from the Albion Online ".bin" Files, and export them to a file as a List or JSON.
+递归删除文件夹中的所有空文件夹
 
 ## Requirements
 * Windows
-* Visual Studio 2017 (to build)
+* Visual Studio 2017/2019 (to build)
 
 ## How to use:
-`ao-id-extractor.exe modeID outFormat [outFolder] [gameFolder]`
-
-modeID          `0=Item Extraction, 1= Location Extraction, 2=Resource, 3=Dump All, 4=Extract Items & Locations & Resource`  
-outFormat       `l=Text List, j=JSON; Parameter does not matter for Dump All`  
-[outFolder]     `Optional: Output folder path. Default: current directory`
-[gameFolder]    `Optional: Location of the main AlbionOnline folder`
+1.\"Select\": Select a folder, or just enter on the textbox.
+2.\"Print\" : Show all the empty folders recursively, but no delete anything. 
+3.\"Clear\" : Clean the screen.
+4.\"STOP\"  : Stop the search process.(In development)
+5.\"Clean\" : Recursively delete empty subfolders under target folder.
