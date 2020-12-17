@@ -47,7 +47,7 @@ namespace ao_id_extractor
             FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
             folderBrowserDialog.ShowNewFolderButton = true;
             folderBrowserDialog.SelectedPath = Path.GetDirectoryName(Application.ExecutablePath);
-            folderBrowserDialog.Description = "Please select an output folder for the Extracted Files";
+            folderBrowserDialog.Description = "Please select an target folder for the Extracted Files";
             DialogResult res = folderBrowserDialog.ShowDialog();
 
             if (res == DialogResult.OK && !string.IsNullOrWhiteSpace(folderBrowserDialog.SelectedPath))
@@ -60,9 +60,26 @@ namespace ao_id_extractor
         private void btnExtract_Click(object sender, EventArgs e)
         {
 
-            Invoke(new Action(Program.RunExtractions));
+            Invoke(new Action(Program.RunClean));
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+            Invoke(new Action(Program.RunClear));
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+            Invoke(new Action(Program.RunPrint));
+        }        
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+
+            Invoke(new Action(Program.InvokeStop));
+        }
+ 
         private void cbExtractionMode_SelectedIndexChanged(object sender, EventArgs e)
         {
             Program.ExportMode = (ExportMode)((ComboBox)sender).SelectedIndex;
@@ -71,6 +88,18 @@ namespace ao_id_extractor
         private void cbExportType_SelectedIndexChanged(object sender, EventArgs e)
         {
             Program.ExportType = (ExportType)((ComboBox)sender).SelectedIndex;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbOutFolder_TextChanged(object sender, EventArgs e)
+        {
+            Program.OutputFolderPath = tbOutFolder.Text;
+            //var newPath = "path change to:" + tbOutFolder.Text + "\r\n";
+            //this.tbConsole.Text += newPath;
         }
     }
 }
