@@ -100,7 +100,7 @@ namespace empty_folder_deleter
         }
         private static string helpString = "***** USAGE *****\r\n1.\"Select\": Select a folder, or just enter on the textbox.\r\n" +
                     "2.\"Print\" : Show all the empty folders recursively, but no delete anything.\r\n" +
-                    "3.\"Clear\" : Clean the screen.\r\n" +
+                    "3.\"Clear\" : Clear the screen.\r\n" +
                     "4.\"STOP\"  : Stop the search process.\r\n" +
                     "5.\"Clean\" : Recursively delete empty subfolders under target folder.\r\n***** USAGE *****";
         [STAThread]
