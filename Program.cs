@@ -117,7 +117,6 @@ namespace empty_folder_deleter
            
             if (parentName != "cmd")
             {
-                // MainWindow mainWindow = new MainWindow();
                 _mainWindow = new MainWindow();
                 Application.EnableVisualStyles();
                 Console.SetOut(new MultiTextWriter(new ControlWriter(_mainWindow.tbConsole), Console.Out));
@@ -193,7 +192,7 @@ namespace empty_folder_deleter
 
                 var results = Directory.GetDirectories(path).Any() || Directory.GetFiles(path).Any();
 
-                if (!results && GetDirectorySize(path) == 0)
+                if (!results && GetDirectorySize(path) == 0 && !path.Contains("RECYCLE.BIN"))
                 {
                     Directory.Delete(path, false);
                     Console.WriteLine("[{0}]: {1}", i, path);
@@ -207,12 +206,12 @@ namespace empty_folder_deleter
 
         public static void RunPrint()
         {
-            Console.Out.WriteLine("#---- Started  Print Operation ----#");
-            Console.Out.WriteLine();
             var startingPath = Program.OutputFolderPath;
             i = 1;
             if (Directory.Exists(startingPath))
             {
+                Console.Out.WriteLine("#---- Started  Print Operation ----#");
+                Console.Out.WriteLine();
                 Console.Out.WriteLine("The following folders will be deleted:");
                 RecurseDirectoryPrint(startingPath);
                 if (i == 1)
@@ -221,11 +220,12 @@ namespace empty_folder_deleter
                     Console.Out.WriteLine();
                     Console.Out.WriteLine("The folder is clean.");
                 }
+                Console.Out.WriteLine();
+                Console.Out.WriteLine("\n#---- Finished Print Operation ----#");
             } else {
                 Console.Out.WriteLine("Invalid directory path: {0}", startingPath);
             }
-            Console.Out.WriteLine();
-            Console.Out.WriteLine("\n#---- Finished Print Operation ----#");
+            
         }        
         public static void InvokeStop()
         {
@@ -249,7 +249,7 @@ namespace empty_folder_deleter
 
                 var results = Directory.GetDirectories(path).Any() || Directory.GetFiles(path).Any();
 
-                if (!results && GetDirectorySize(path) == 0)
+                if (!results && GetDirectorySize(path) == 0 && !path.Contains("RECYCLE.BIN"))
                 {
                     Console.WriteLine("[{0}]: {1}", i, path);
                     i++;
