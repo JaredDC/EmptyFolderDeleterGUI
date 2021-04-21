@@ -7,7 +7,6 @@
 *.userosscache
 *.sln.docstates
 .vs
-emptyfolderdeleter-icon.ico
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
